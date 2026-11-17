@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kerala Invasive Plant Survey — a statewide collaborative initiative to document and monitor invasive plants.">
+  <meta name="theme-color" content="#173d32">
+  <title>KIPS | Kerala Invasive Plant Survey</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="KIPS home">
+      <span class="brand-mark">K</span>
+      <span><strong>KIPS</strong><small>KERALA INVASIVE PLANT SURVEY</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#about">About</a>
+      <a href="#survey-map">Survey map</a>
+      <a href="#progress">Progress</a>
+      <a href="#species">Species</a>
+      <a class="nav-login" href="login.html">Surveyor login <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="eyebrow"><span class="pulse"></span> A statewide biodiversity monitoring initiative</div>
+        <h1>Mapping invasive plants.<br><em>Protecting Kerala’s ecosystems.</em></h1>
+        <p class="hero-copy">A collaborative field-survey platform to document the distribution of invasive plants across Kerala, understand their spread and support evidence-based management.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#survey-map">Explore survey map <span>→</span></a>
+          <a class="button button-outline" href="#about">About the project</a>
+        </div>
+        <div class="hero-note"><span class="note-icon">⌖</span> 14 districts <i></i> Standardised field sampling <i></i> Shared monitoring</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle circle-one"></div><div class="art-circle circle-two"></div>
+        <div class="leaf leaf-a"></div><div class="leaf leaf-b"></div><div class="leaf leaf-c"></div>
+        <div class="art-label"><span class="art-dot"></span> KERALA · INDIA</div>
+      </div>
+    </section>
+
+    <section class="stats-wrap" aria-label="Survey overview">
+      <div class="stat-card"><span class="stat-icon">▦</span><div><strong>14</strong><small>Districts in Kerala</small></div></div>
+      <div class="stat-card"><span class="stat-icon">⌗</span><div><strong>2 × 2 km</strong><small>Sampling grid framework</small></div></div>
+      <div class="stat-card"><span class="stat-icon">□</span><div><strong>5</strong><small>Quadrats per selected grid</small></div></div>
+      <div class="stat-card"><span class="stat-icon">◎</span><div><strong>100 m</strong><small>Minimum quadrat spacing</small></div></div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-kicker">ABOUT KIPS</div>
+      <div class="section-heading-row">
+        <h2>A coordinated survey<br>across Kerala.</h2>
+        <p>Kerala Invasive Plant Survey (KIPS) is designed to create a systematic, georeferenced record of invasive plant occurrence across the state through standardised field observations.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-number">01</span><div class="feature-symbol">⌖</div><h3>Systematic sampling</h3><p>A statewide 2 km × 2 km grid provides a consistent spatial framework for field data collection.</p></article>
+        <article class="feature-card"><span class="feature-number">02</span><div class="feature-symbol">♧</div><h3>Field observations</h3><p>Surveyors record invasive plants, habitat information, abundance and georeferenced quadrat observations.</p></article>
+        <article class="feature-card"><span class="feature-number">03</span><div class="feature-symbol">✓</div><h3>Verified records</h3><p>Submitted observations can be reviewed and validated before appearing in the public survey dashboard.</p></article>
+      </div>
+    </section>
+
+    <section class="map-section" id="survey-map">
+      <div class="section map-heading">
+        <div><div class="section-kicker">SPATIAL OVERVIEW</div><h2>Explore the survey map</h2><p class="section-intro">The map is prepared for the KIPS grid and quadrat layers. The pilot GIS dataset will be connected in the next development stage.</p></div>
+        <div class="map-legend"><span><b class="legend-grid"></b> Survey grid</span><span><b class="legend-point"></b> Quadrat point</span></div>
+      </div>
+      <div class="map-shell"><div id="keralaMap" role="img" aria-label="Map area for the Kerala invasive plant survey"></div><div class="map-overlay" id="mapMessage"><span class="map-overlay-icon">⌖</span><strong>Survey map workspace</strong><p>GIS layers will appear here after the KIPS dataset is connected.</p></div></div>
+      <div class="map-foot"><span><b class="status-dot"></b> GIS integration pending</span><span>Map powered by OpenStreetMap</span></div>
+    </section>
+
+    <section class="section progress-section" id="progress">
+      <div class="section-kicker">SURVEY MONITORING</div>
+      <div class="section-heading-row"><h2>Track survey<br>progress.</h2><p>District-wise progress will update as field teams submit quadrat records and administrators verify the data.</p></div>
+      <div class="progress-placeholder">
+        <div class="placeholder-icon">▤</div><div><strong>District progress dashboard</strong><p>Live counts for assigned, in-progress, submitted and completed grids will be shown here after Firebase is configured.</p></div>
+        <span class="coming-soon">COMING NEXT</span>
+      </div>
+      <div class="status-key">
+        <span><b class="status-grey"></b> Not surveyed</span><span><b class="status-amber"></b> In progress</span><span><b class="status-blue"></b> Submitted</span><span><b class="status-green"></b> Completed</span>
+      </div>
+    </section>
+
+    <section class="species-section" id="species">
+      <div class="section species-inner">
+        <div><div class="section-kicker light-kicker">SPECIES RECORDS</div><h2>Documenting the plants<br>that are changing habitats.</h2><p>Validated species records will help build a state-level picture of invasive plant distribution and occurrence.</p><a href="login.html" class="text-link">Contribute a field observation <span>→</span></a></div>
+        <div class="species-list">
+          <div><span>01</span><i>Eichhornia crassipes</i><small>Water hyacinth</small></div>
+          <div><span>02</span><i>Lantana camara</i><small>Lantana</small></div>
+          <div><span>03</span><i>Chromolaena odorata</i><small>Siam weed</small></div>
+          <div><span>04</span><i>Mikania micrantha</i><small>Mikania vine</small></div>
+          <div><span>05</span><i>Parthenium hysterophorus</i><small>Congress grass</small></div>
+          <div><span>06</span><i>Prosopis juliflora</i><small>Mesquite</small></div>
+          <p class="species-disclaimer">Illustrative initial species list. Final survey checklist will be managed by the project administrator.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section participation">
+      <div class="participation-card"><div><div class="section-kicker">JOIN THE SURVEY</div><h2>Every field observation<br>adds to the bigger picture.</h2><p>Registered surveyors will be able to access assigned grids, submit quadrat observations and follow verification status.</p></div><a href="login.html" class="button button-dark">Surveyor portal <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">K</span><span><strong>KIPS</strong><small>KERALA INVASIVE PLANT SURVEY</small></span></a>
+    <p>A collaborative initiative for documenting invasive plants across Kerala.</p>
+    <span class="footer-copy">© <span id="year"></span> KIPS · Kerala, India</span>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
